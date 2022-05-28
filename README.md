@@ -1,2 +1,6 @@
 # web-231
-Enterprise JavaScript
+# WEB 231 Enterprise JavaScript I
+## Contributors
+* Richard Krasso
+* Jamal Damir
+
