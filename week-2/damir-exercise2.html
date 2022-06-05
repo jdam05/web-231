@@ -3,7 +3,7 @@
     Title: Exercise 2.2
     Author: Jamal Eddine Damir
     Date: 04 June 2022
-    Description:  This the landing page for Exercise-2.2. This page demonstrates
+    Description: This the landing page for Exercise-2.2. This page demonstrates
                  knowledge of how to bind text to innerHTML of an HTML tag, as 
                  well as adding an onclick eventListener to a button to create 
                  an alert message. Code snippets were used from the sources bellow.
@@ -23,6 +23,7 @@
 <body>
     <h1>Exercise 2.2 - Hello JavaScript</h1>
     <button id="btnMyCourse" type="button">What course am I taking?</button>
+
     <!--Script to add an event listener to "btnMyCourse"-->
     <script>
         const element = document.getElementById("btnMyCourse");
@@ -33,7 +34,9 @@
             alert("WEB 231 – Enterprise JavaScript I.");
         }
     </script>
+
     <p id="txtMyWorld"></p>
+    
     <!--This script binds the provided text value to the innerHTML of the paragraph tag with "textMyWorld" ID-->
     <script>
         document.getElementById("txtMyWorld").innerHTML = "You are now in Damir’s world!";
