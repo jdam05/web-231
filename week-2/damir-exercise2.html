@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+    Title: Exercise 2.2
+    Author: Jamal Eddine Damir
+    Date: 04 June 2022
+    Description:  This the landing page for Exercise-2.2. This page demonstrates
+                 knowledge of how to bind text to innerHTML of an HTML tag, as 
+                 well as adding an onclick eventListener to a button to create 
+                 an alert message. Code snippets were used from the sources bellow.
+    Sources: 
+            * https://www.w3schools.com/js/js_whereto.asp
+            * https://www.w3schools.com/jsref/met_element_addeventlistener.asp
+            * https://www.w3schools.com/js/tryit.asp?filename=tryjs_alert
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB 231 – Enterprise JavaScript I</title>
+    <link href="/global.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <h1>Exercise 2.2 - Hello JavaScript</h1>
+    <button id="btnMyCourse" type="button">What course am I taking?</button>
+    <!--Script to add an event listener to "btnMyCourse"-->
+    <script>
+        const element = document.getElementById("btnMyCourse");
+        element.addEventListener("click", myFunction);
+
+        // Function that creates an alert message when btnMyCourse is clicked
+        function myFunction() {
+            alert("WEB 231 – Enterprise JavaScript I.");
+        }
+    </script>
+    <p id="txtMyWorld"></p>
+    <!--This script binds the provided text value to the innerHTML of the paragraph tag with "textMyWorld" ID-->
+    <script>
+        document.getElementById("txtMyWorld").innerHTML = "You are now in Damir’s world!";
+    </script>
+
+    <a class="return-home" href="/index.html">Return</a>
+    
+</body>
+</html>
