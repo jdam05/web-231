@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--
+    Title: Assignment 2.3 - Values and Variables
+    Author: Jamal Eddine Damir
+    Date: 05 June 2022
+    Description: This page demonstrates knowledge of how declare JavaScript
+                 variables and assign values to them. It also demonstrates
+                 how to bind those value to HTML list elements through 
+                 innerHTML.
+    Sources: 
+            * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString
+            * Professor provided course instructions.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB 231 – Enterprise JavaScript I</title>
+    <link href="../site.css" type="text/css" rel="stylesheet" />
+    <link href="../global.css" type="text/css" rel="stylesheet" />
+    <link href="damir-payroll.css" type="text/css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="container">
+        <h1 class="app-header" id="payroll-header">Payroll System</h1>
+        <h3>Employee record 1</h3>
+        <ul>
+            <li id="txtFirstNameEmployee1"></li>
+            <li id="txtLastNameEmployee1"></li>
+            <li id="txtAddressEmployee1"></li>
+            <li id="txtHireDateEmployee1"></li>
+            <li id="txtPayRateEmployee1"></li>
+        </ul>
+
+        <h3>Employee record 2</h3>
+        <ul>
+            <li id="txtFirstNameEmployee2"></li>
+            <li id="txtLastNameEmployee2"></li>
+            <li id="txtAddressEmployee2"></li>
+            <li id="txtHireDateEmployee2"></li>
+            <li id="txtPayRateEmployee2"></li>
+        </ul>
+
+        <h3>Employee record 2</h3>
+        <ul>
+            <li id="txtFirstNameEmployee3"></li>
+            <li id="txtLastNameEmployee3"></li>
+            <li id="txtAddressEmployee3"></li>
+            <li id="txtHireDateEmployee3"></li>
+            <li id="txtPayRateEmployee3"></li>
+        </ul>
+
+        <script>
+            // Variables Declaration and Value Value Assignment for Record1
+            let firstNameEmployee1 = "Kevin";
+            let lastNameEmployee1 = "Jones";
+            let addressEmployee1 = "2690 Winners Street";
+            let payRateEmployee1 = 30.65.toFixed(1);
+            let hireDateEmployee1 = new Date(2009, 11, 29, 0, 0, 0, 0).toLocaleDateString("en-Us");
+
+            // Variables Declaration and Value Value Assignment for Record2
+            let firstNameEmployee2 = "James";
+            let lastNameEmployee2 = "Nolen";
+            let addressEmployee2 = "5698 Margaret BLVD";
+            let payRateEmployee2 = 31.89.toFixed(1);
+            let hireDateEmployee2 = new Date(2007, 6, 07, 0, 0, 0, 0).toLocaleDateString("en-Us");
+
+            // Variables Declaration and Value Value Assignment for Record3
+            let firstNameEmployee3 = "Brittany";
+            let lastNameEmployee3 = "Davidson";
+            let addressEmployee3 = "212 Magnolia Drive";
+            let payRateEmployee3 = 29.87.toFixed(1);
+            let hireDateEmployee3 = new Date(2011, 3, 02, 0, 0, 0, 0).toLocaleDateString("en-Us");
+
+            // Binding Values to Record1 Ordered List Elements
+            document.getElementById("txtFirstNameEmployee1").innerHTML = firstNameEmployee1;
+            document.getElementById("txtLastNameEmployee1").innerHTML = lastNameEmployee1;
+            document.getElementById("txtAddressEmployee1").innerHTML = addressEmployee1;
+            document.getElementById("txtHireDateEmployee1").innerHTML = hireDateEmployee1;
+            document.getElementById("txtPayRateEmployee1").innerHTML = payRateEmployee1;
+
+            // Binding Values to Record2 Ordered List Elements
+            document.getElementById("txtFirstNameEmployee2").innerHTML = firstNameEmployee2;
+            document.getElementById("txtLastNameEmployee2").innerHTML = lastNameEmployee2;
+            document.getElementById("txtAddressEmployee2").innerHTML = addressEmployee2;
+            document.getElementById("txtHireDateEmployee2").innerHTML = hireDateEmployee2;
+            document.getElementById("txtPayRateEmployee2").innerHTML = payRateEmployee2;
+
+            // Binding Values to Record3 Ordered List Elements
+            document.getElementById("txtFirstNameEmployee3").innerHTML = firstNameEmployee3;
+            document.getElementById("txtLastNameEmployee3").innerHTML = lastNameEmployee3;
+            document.getElementById("txtAddressEmployee3").innerHTML = addressEmployee3;
+            document.getElementById("txtHireDateEmployee3").innerHTML = hireDateEmployee3;
+            document.getElementById("txtPayRateEmployee3").innerHTML = payRateEmployee3;
+        </script>
+
+        <a class="return-home" href="../index.html">Return</a>
+    </div>
+</body>
+</html>

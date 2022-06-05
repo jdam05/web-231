@@ -1,0 +1,11 @@
+/**
+    Title: Web231 - Assignment 2.3 CSS File
+    Author: Jamal Damir
+    Date: June 05 2022
+    Description: StyleSheet for damir-payroll.html
+*/
+ul {
+    border-style: dotted;
+    border-color: red;
+    border-width: 1px;
+}
