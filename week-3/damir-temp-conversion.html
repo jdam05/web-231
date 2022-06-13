@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+    Title: Assignment 3.2 - Temperature Conversion App
+    Author: Jamal Eddine Damir
+    Date: 13 June 2022
+    Description: A web page with an application that converts temperature in Fahrenheit to celsius.
+    Sources: 
+            * Code from Professor's provided course instructions.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB 231 – Enterprise JavaScript I</title>
+    <link href="../global.css" type="text/css" rel="stylesheet" />
+    <link href="damir-temp-conversion.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inria+Sans&family=Inter:wght@500;900&family=Oswald:wght@300;400;500;700&family=Ultra&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+    <!--A container that includes all the cards-->
+    <div id="container">
+        <h1 class="app-header">Welcome to the Temperature Conversion App!</h1>
+        <!--Card including the input form-->
+            <div class="card">
+                <div class="card-title">Fahrenheit to Celsius Converter</div>
+                <div class="card-content">
+                    <!--Form that takes temperature in fahrenheit from the user-->
+                    <div class="form">
+                        <div class="form-field">
+                            <label for="txtFahrenheit">Fahrenheit value:</label>
+                            <!--Input for the user to enter the temperature in fahrenheit-->
+                            <input type="text" id="txtFahrenheit" class="input" name="txtFahrenheit" />
+                        </div>
+                        <div class="form-field">
+                            <!--Button to be clicked to trigger the conversion-->
+                            <button type="submit" class="btn btn-primary full-width" id="btnConvert">Convert Temperature</button>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        <!--Dive including the temperature conversion JavaScriptCode and the card displaying the results-->
+        <div id="form-result">
+            <div class="card">
+                <div class="card-title">Conversion Results</div>
+                    <div id="card-content">
+                        <script>
+                            // onclick event for the "convert temperature" button
+                            document.getElementById("btnConvert").onclick = function convertToCelsius() {
+                            // The value of the user's input is assigned to the fahrenheit variable
+                            let fahrenheit = document.getElementById("txtFahrenheit").value;
+                            // Fahrenheit to celsius conversion formula calculation assigned to celsius variable
+                            let celsius = ((parseFloat(fahrenheit) - 32) / 1.8).toFixed(2);
+                            // Binding the value of the celsius variable to the card displaying results
+                            document.getElementById("card-content").innerHTML = celsius;
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <!--Link to web-231 index.html, the course landing page-->
+            <a class="return-home" href="../index.html">Return</a>
+        </div>
+        
+</body>
+</html>

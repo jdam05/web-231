@@ -1,0 +1,25 @@
+/**
+    Title: damir-temp-cenversion.css
+    Author: Jamal Damir
+    Date: june 13 2022
+    Description: Copy of CSS classes from Web200 Repository
+*/
+body {
+    font-family: "Oswald",
+        Verdana,
+        Arial,
+        sans-serif;
+}
+#container {
+    padding: 10px;
+    width: 50%;
+    margin: auto;
+}
+.app-header {
+    text-align: center;
+}
+#card-content {
+    text-align: center;
+    font-size: 28px;
+}
+
