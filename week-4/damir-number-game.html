@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--
+    Title: Assignment 4.2 - Number Guessing Game
+    Author: Jamal Eddine Damir
+    Date: June 19 2022
+    Description: A web page with an application that demonstrates the understanding of the if..else if..else statements through 
+                 a number guessing game.
+    Sources: 
+            * Code from Professor's provided course instructions.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB 231 – Enterprise JavaScript I</title>
+    <link href="../global.css" type="text/css" rel="stylesheet" />
+    <link href="damir-number-game.css" type="text/css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inria+Sans&family=Inter:wght@500;900&family=Oswald:wght@300;400;500;700&family=Ultra&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+    <!--A container that includes all the cards-->
+    <div id="container">
+        <h1 class="app-header">Welcome to the numbers game!</h1>
+        <!--Card including the input form-->
+        <div class="card">
+            <div class="card-title">Pick a number between 1 and 10</div>
+            <div class="card-content">
+                <!--Form that takes Guessed number from user-->
+                <div class="form">
+                    <div class="form-field">
+                        <label for="txtMyNumber">Guess the number:</label>
+                        <!--Input for the user to enter a guessed number-->
+                        <input type="text" id="txtMyNumber" class="input" name="txtMyNumber" />
+                    </div>
+                    <div class="form-field">
+                        <!--Button to be clicked to trigger the comparison-->
+                        <button type="submit" class="btn btn-primary full-width" id="btnSubmit">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Div that includes Comparison JavaScript Code and the card displaying the results-->
+        <div id="form-result">
+            <div class="card">
+                <div class="card-title">Results</div>
+                <!--Card displaying comparison result-->
+                <div id="card-content">
+                    <script>
+                        // The value of the formula to generate random number between 1 and 10 is assigned to "rnd" variable.
+                        const rnd = Math.floor((Math.random() * 10) + 1);
+                        // Variable with empty string that will hold different strings depending on comparison results.
+                        let resultText = "";
+                        // onclick event for the "Submit" button.
+                        document.getElementById("btnSubmit").onclick = function compareToRandomNumber() {
+                            // The value of the user's input is assigned to the "myNumber" variable
+                            let myNumber = document.getElementById("txtMyNumber").value;
+
+                            /*
+                             * Conditional statements to compare user input to generated random number:
+                             * First statement checks if user input is greater than the random number.
+                             * Second statement checks if user input is less than the random number.
+                             * If neither statements is true, then the numbers are equal.
+                            */
+                            if (myNumber > rnd) {
+                                // A string value is assigned to the "resultText" variable if condition is met. If not, the next condition is evaluated.
+                                resultText = `The number is less than ${myNumber}`;
+                            } else if (myNumber < rnd) {
+                                resultText = `The number is greater than ${myNumber}`;
+                            } else {
+                                // A String value is assigned to the "resultText" variable if none of the previous condition is met.
+                                resultText = "Congratulations! You picked the correct number!";
+                            }
+                            // Binding the value of the resultText variable to the card displaying results.
+                            document.getElementById("card-content").innerHTML = resultText;
+                        }     
+                    </script>
+                </div>
+            </div>
+        </div>
+        <!--Link to web-231 index.html, the course landing page-->
+        <a class="return-home" href="../index.html">Return</a>
+    </div>
+</body>
+</html>

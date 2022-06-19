@@ -1,0 +1,27 @@
+/**
+    Title: CSS styleSheet for Assignment 4.2 - Number Guessing Game
+    Author: Jamal Eddine Damir
+    Date: june 19 2022
+    Description: Copy of CSS classes from Web200 Repository
+*/
+body {
+    font-family: "Oswald",
+        Verdana,
+        Arial,
+        sans-serif;
+}
+
+#container {
+    padding: 10px;
+    width: 50%;
+    margin: auto;
+}
+
+.app-header {
+    text-align: center;
+}
+
+#card-content {
+    text-align: center;
+    font-size: 28px;
+}
