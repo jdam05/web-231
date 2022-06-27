@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<!--
+    Title: Assignment 5.2 - Sequence Game
+    Author: Jamal Eddine Damir
+    Date: June 26 2022
+    Description: A web page with an application that demonstrates the understanding
+                 of the "if..else if..else statements and "while", "do...while" and "for" loops through 
+                 a number sequence game.
+    Sources: 
+            * Followed Professor's provided course instructions.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB 231 – Enterprise JavaScript I</title>
+    <link href="../global.css" type="text/css" rel="stylesheet" />
+    <link href="damir-sequence-game.css" type="text/css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inria+Sans&family=Inter:wght@500;900&family=Oswald:wght@300;400;500;700&family=Ultra&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+    <!--A container that includes all the cards-->
+    <div id="container">
+        <h1 class="app-header">Welcome to the sequence game!</h1>
+        <!--Card including the input form-->
+        <div class="card">
+            <div class="card-title">Sequence Selection Form</div>
+            <div class="card-content">
+                <!--Form with a drop down menu to select options-->
+                <div class="form">
+                    <div class="form-field">
+                        <label for="txtSequence">Choose a number sequence:</label>
+                        <!--Drop down menu for the user to select a number sequence option-->
+                        <select name="txtSequence" class="drop-down-menu" id="sequence">
+                            <option value="select">--Select--</option>
+                            <option value="fibonacci">Fibonacci Sequence</option>
+                            <option value="even">Even Numbers</option>
+                            <option value="odd">Odd Numbers</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <!--Button to be clicked to trigger the comparison-->
+                        <button type="submit" class="btn btn-primary full-width" id="btnDisplaySequence">Display Sequence</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+    <!--Div that includes Comparison JavaScript Code and the card displaying the results-->
+        <div id="form-result">
+         <div class="card">
+            <div class="card-title">Sequence Results</div>
+            <!--Card displaying comparison result-->
+            <div id="card-content">
+                <script>
+                    // onclick event for the "Display Sequence" button.
+                    document.getElementById("btnDisplaySequence").onclick = function displaySelectedSequence() {
+                        // The value of the user's selection is assigned to the "value" variable
+                        let choice = document.getElementById("sequence");
+                        var value = choice.options[choice.selectedIndex].value;
+
+
+                        /*
+                         * Conditional statements to compare user selected option to number sequence type:
+                         * First statement checks if user selects Fibonacci numbers sequence.
+                         * Second statement checks if user selects even numbers sequence.
+                         * Second statement checks if user Selects odd numbers sequence.
+                         * If neither statements is true, then an alert is displayed to request a user selection.
+                        */
+                        let num1 = 0;
+                        let num2 = 1;
+                        let next;
+                        let fibonacciSequenceText = "";
+
+                        /* if the value selected is fibonacci, a string value representing a sequence of fibonacci 
+                           numbers less than 40 is assigned to the fibonacciSequenceText variable.
+                        */
+                       if (value === "fibonacci") {
+                         while (num1 < 40) {
+                            fibonacciSequenceText += num1 + ", ";
+                            next = num1 + num2;
+                            num1 = num2;
+                            num2 = next;
+                         }
+                         // Binding the value of the  fibonacciSequenceText variable to the card displaying results.
+                         document.getElementById("card-content").innerHTML = fibonacciSequenceText.slice(0,-2);
+                        /* if the value selected is even, a string value representing a sequence of even
+                            numbers less than 20 is assigned to the fibonacciSequenceText variable.
+                        */
+                       } else if (value === "even") {
+                            num1 = 2;
+                        do {
+                            fibonacciSequenceText += num1 + ", ";
+                            num1 += 2;
+                        } while (num1 < 20);
+                        document.getElementById("card-content").innerHTML = fibonacciSequenceText.slice(0, -2); 
+                        /* if the value selected is odd, a string value representing a sequence of odd
+                               numbers less than 20 is assigned to the fibonacciSequenceText variable.
+                        */
+                       } else if (value === "odd") {
+                        for (let i = 1; i < 20; i += 2) {
+                            fibonacciSequenceText += i + ", ";
+                        }
+                        document.getElementById("card-content").innerHTML = fibonacciSequenceText.slice(0, -2); 
+                        /* if no option is selected, an alert is shown to the user requiring them to select an option.
+                        */
+                       } else {
+                        alert("Invalid selection, please try again!");
+                       }
+                    }     
+                </script>
+                </div>
+            </div>
+        </div>
+    <!--Link to web-231 index.html, the course landing page-->
+    <a class="return-home" href="../index.html">Return</a>
+    </div>
+</body>
+</html>
