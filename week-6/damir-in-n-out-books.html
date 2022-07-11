@@ -1,4 +1,16 @@
 <!DOCTYPE html>
+<!--
+    Title: Assignment 6.2 - In-N-Out-Books
+    Author: Jamal Eddine Damir
+    Date: July 03 2022
+    Description: A web page with an application that demonstrates the understanding
+                 of How to define and create JavaScript object literals and displaying the bound values of 
+                 the objects' properties in an HTML table when triggered by a button onclick event dependinn
+                 on the selected option.
+    Sources: 
+            * Followed Professor's provided course instructions.
+            * W3Schools: https://www.w3schools.com/js/js_objects.asp
+-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,7 +35,7 @@
                 <div class="form">
                     <div class="form-field">
                         <label for="txtListing">Choose a listing:</label>
-                        <!--Drop down menu for the user to select a number sequence option-->
+                        <!--Drop down menu for the user to select an option-->
                         <select name="txtListing" class="drop-down-menu" id="favoriteList">
                             <option value="select">--Select--</option>
                             <option value="books">Top 3 Favorite Books</option>
@@ -43,6 +55,8 @@
                 <!--Card displaying comparison result-->
                 <div class="card" id="favorite-books">
                     <div class="card-title">Top 3 Favorite Books</div>
+
+                    <!--Table displaying favorite books-->
                     <table>
                         <tr>
                             <th>ISBN</th>
@@ -68,6 +82,8 @@
                 </div>
                 <div class="card" id="favorite-authors">
                     <div class="card-title">Top 3 Favorite Authors</div>
+
+                    <!--Table displaying favorite Authors-->
                     <table>
                         <tr>
                             <th>Name</th>
@@ -123,13 +139,13 @@
 
                 // Assigning favorite-books and favorite-authors divs to books and authors variables
                 let books = document.getElementById("favorite-books");
-                let authors= document.getElementById("favorite-authors");
+                let authors = document.getElementById("favorite-authors");
 
-
+                // Setting the display properties of the books and authors variables
                 books.style.display = "none";
                 authors.style.display = "none";
                 
-                // Binding favorite books object literals to HTML Table
+                    // Binding favorite books object literals to HTML Table
                     document.getElementById("txtTheArtOfLovingISBN").innerHTML = favoriteBook1.isbn;
                     document.getElementById("txtTheArtOfLovingTitle").innerHTML = favoriteBook1.title;
                     document.getElementById("txtTheArtOfLovingPages").innerHTML = favoriteBook1.pages;
@@ -149,19 +165,28 @@
                     document.getElementById("txtTolkienGenre").innerHTML = favoriteAuthor3.genre;
 
 
-
+                // Registering onclick event for "btnDisplayListing" button
                 document.getElementById("btnDisplayListing").onclick = function displayFavoriteListing() {
+                    // The value of the user's selection is assigned to the "choice" variable
                     let choice = document.getElementById("favoriteList").value;
             
-
-                    
-
+                     /*
+                        * Conditional statements to compare user selected option to number sequence type:
+                        * First statement checks if user selects Fibonacci numbers sequence.
+                        * Second statement checks if user selects even numbers sequence.
+                        * Second statement checks if user Selects odd numbers sequence.
+                        * If neither statements is true, then an alert is displayed to request a user selection.
+                       */
+                    /* Statements to check if the user selected value is either books or authors and change 
+                       the authors and books variables display properties accordingly.
+                    */
                     if (choice === "books") {
                         authors.style.display = "none";
                         books.style.display = "block";
                     } else if (choice === "authors") {
                         authors.style.display = "block";
                         books.style.display = "none";
+                    // If "select" is selected both variables' display properties are set to "none"
                     } else {
                         authors.style.display = "none";
                         books.style.display = "none";
