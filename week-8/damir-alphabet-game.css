@@ -1,0 +1,36 @@
+/*
+    Title: CSS styleSheet for Assignment 8.2 - Alphabet Game
+    Author: Jamal Eddine Damir
+    Date: july 17 2022
+    Description: Copy of CSS classes from Web200 Repository 
+                 with added CSS for elements specific to assignment
+*/
+body {
+    font-family: "Oswald",
+        Verdana,
+        Arial,
+        sans-serif;
+}
+
+/* Styling for the div that contains all the form elements*/
+#container {
+    padding: 10px;
+    width: 50%;
+    margin: auto;
+}
+
+/* Text Styling for h1 element for app's title*/
+.app-header {
+    text-align: center;
+}
+
+/* Styling for form elements and submit button*/
+#card-content {
+    text-align: center;
+    font-size: 28px;
+}
+/* Styling alphabet letter position result string*/
+#alphabet-letter {
+    text-align: center;
+        font-size: 28px;
+}
