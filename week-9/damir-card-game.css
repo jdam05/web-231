@@ -1,7 +1,7 @@
 /*
-    Title: CSS styleSheet for Assignment 8.2 - Alphabet Game
+    Title: CSS styleSheet for Assignment 9.2 - Final: Card Game
     Author: Jamal Eddine Damir
-    Date: july 17 2022
+    Date: july 24 2022
     Description: Copy of CSS classes from Web200 Repository 
                  with added CSS for elements specific to assignment
 */
@@ -29,8 +29,13 @@ body {
     text-align: center;
     font-size: 28px;
 }
-/* Styling alphabet letter position result string*/
-#alphabet-letter {
+
+/*Styling for player card and the player-card-container*/
+.player-card {
     text-align: center;
-        font-size: 28px;
-} 
+}
+#player-card-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+}
